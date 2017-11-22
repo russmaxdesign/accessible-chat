@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Live Chat Support</title>
-    <link rel="stylesheet" href="styles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Testing SVG Accessibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
     <h1>Live Chat Support</h1>
+    <p><a href="https://github.com/russmaxdesign/accessible-chat">Github Page</a></p>
 
     <div id="message1" aria-live="assertive"></div>
   
@@ -16,7 +19,7 @@
     </div>
 
     <div class="chat chat--you" tabindex="0">
-      <b>Andrew</b>: Yes. I have, do you think I'm an idiot? 
+      <b>Andrew</b>: Yes I have. Do you think I'm an idiot? 
     </div>
 
     <div class="chat chat--other" tabindex="0">
@@ -33,67 +36,67 @@
 
     <div id="message2" aria-live="assertive"></div>
 
-    <form action="#">
+    <form action="#" id="form">
       <label for="chat1">Add your message here</label>
       <textarea name="chat1" id="chat1"></textarea>
-      <button class="button">Submit</button>
     </form>
 
+    <p><a href="https://github.com/russmaxdesign/accessible-chat">Github Page</a></p>
+
 <script type="text/javascript">
-(function()
-{
-
-  window.setTimeout(function()
+  (function()
   {
   
-    document.getElementById('message2').innerHTML = '<div class="chat chat--other" tabindex="0">Mary is typing...</div>';
-  
-  }, 20000);
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.innerHTML = 'Submit';
+    
+    document.getElementById('form').appendChild(button);
 
-  window.setTimeout(function()
+  button.addEventListener('click', function()
   {
-  
-    document.getElementById('message2').innerHTML = '';
-  
-  }, 25000);
-
-
-  window.setTimeout(function()
-  {
-  
-    document.getElementById('message1').innerHTML = 'There is a new message from Mary';
-  
-  }, 25000);
-
-  window.setTimeout(function()
-  {
-  
-    document.getElementById('message3').innerHTML = '<div class="chat chat--other" tabindex="0"><b>Mary</b>: I dont get paid enough to be nice.</div>';
-  
-  }, 25000);
-
-  window.setTimeout(function()
-  {
-  
-    document.getElementById('message4').innerHTML = '<div class="chat chat--you chat--progress" tabindex="0"><i>Andrew is typing...</i></div>';
-  
-  }, 30000);
-
-  window.setTimeout(function()
-  {
-  
-    document.getElementById('message1').innerHTML = 'Your message has been added';
-  
-  }, 35000);
-
-  window.setTimeout(function()
-  {
-  
+    
     document.getElementById('message4').innerHTML = '<div class="chat chat--you" tabindex="0"><b>Andrew</b>: Wow. You are the rudest support person ever!</div>';
-  
-  }, 35000);
 
-})();
+      document.getElementById('message1').innerHTML = 'Your message has been added';
+    
+  }, false);
+  
+  })();
+
+  (function()
+  {
+
+    window.setTimeout(function()
+    {
+    
+      document.getElementById('message2').innerHTML = '<div class="chat chat--other" tabindex="0">Mary is typing...</div>';
+    
+    }, 20000);
+
+    window.setTimeout(function()
+    {
+    
+      document.getElementById('message2').innerHTML = '';
+    
+    }, 25000);
+
+
+    window.setTimeout(function()
+    {
+    
+      document.getElementById('message1').innerHTML = 'There is a new message from Mary';
+    
+    }, 25000);
+
+    window.setTimeout(function()
+    {
+    
+      document.getElementById('message3').innerHTML = '<div class="chat chat--other" tabindex="0"><b>Mary</b>: I dont get paid enough to be nice.</div>';
+    
+    }, 25000);
+
+  })();
 </script>
   </body>
 </html>

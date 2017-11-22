@@ -1,26 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  max-width: 40em;
-  margin: 0 auto;
-  font: 100%/1.3 helvetica, arial, sans-serif;
-}
-
-body {
-  padding: 15px;
-  color: #000;
-  background: #fff;
-}
-
-h1 {
-  margin: 0 0 .5em;
-  font-size: 1.8em;
-  font-family: 'Roboto Slab', times, serif;
-}
-
 #message1 {
   position: absolute;
   overflow: hidden;
